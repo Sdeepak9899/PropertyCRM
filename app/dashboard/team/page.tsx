@@ -4,37 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Plus, Users, TrendingUp, Trash2, Edit2 } from 'lucide-react'
-
-const mockTeamMembers = [
-  {
-    id: '1',
-    name: 'Alice Johnson',
-    email: 'alice@company.com',
-    role: 'Agent',
-    properties: 12,
-    deals: 8,
-    revenue: 2400000,
-  },
-  {
-    id: '2',
-    name: 'Bob Smith',
-    email: 'bob@company.com',
-    role: 'Agent',
-    properties: 8,
-    deals: 5,
-    revenue: 1500000,
-  },
-  {
-    id: '3',
-    name: 'Carol Williams',
-    email: 'carol@company.com',
-    role: 'Senior Agent',
-    properties: 15,
-    deals: 12,
-    revenue: 3200000,
-  },
-]
-
+import { mockTeamMembers } from '@/lib/mock-data'
 export default function TeamPage() {
   return (
     <div className="space-y-6 p-6">

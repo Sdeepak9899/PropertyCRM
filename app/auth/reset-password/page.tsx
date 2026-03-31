@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
@@ -15,6 +15,14 @@ import type { z } from 'zod'
 type ResetPasswordForm = z.infer<typeof resetPasswordSchema>
 
 export default function ResetPasswordPage() {
+  return (
+    <Suspense fallback={<div className="space-y-6 text-center text-sm text-muted-foreground">Loading...</div>}>
+      <ResetPasswordContent />
+    </Suspense>
+  )
+}
+
+function ResetPasswordContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const token = searchParams.get('token')
